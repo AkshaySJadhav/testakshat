@@ -1,0 +1,97 @@
++++++++
+ANSIBLE:
++++++++
+
+==> Live Example & When to use Ansible :
+
+- Provisioning. Your apps have to live somewhere. ...
+- Configuration Management. Centralizing configuration file management and deployment is a common use case for Ansible, and it's how many power users are first introduced to the Ansible automation platform.
+- Application Deployment. When you define your application with Ansible, and manage the deployment with Ansible Tower, teams are able to effectively manage the entire application lifecycle from development to production.
+- Continous delivery .Creating a CI/CD pipeline requires buy-in from numerous teams.
+- Security automation. When you define your security policy in Ansible, scanning and remediation of site-wide security policy can be integrated into other automated processes and instead of being an afterthought, it’ll be integral in everything that is deployed.
+- Orchestration. Configurations alone don’t define your environment. You need to define how multiple configurations interact and ensure the disparate pieces can be
+
+==> Ansible components
+
+https://cloudacademy.com/blog/ansible-aws/
+https://cloudaffaire.com/ansible-playbook-components/
+
+==> Puppet & Ansible.
+
+Ansible
+1. Developed to simplify complex orchestration and configuration management tasks.
+2. The platform is written in Python and allows users to script commands in YAML as an imperative programming paradigm. Written in YAML language.
+3. Automated workflow for Continuous Delivery.
+4. Ansible doesn’t require agents on every system, and modules can reside on any server.
+5. CLI accepts commands in almost any language.
+
+Puppet
+1. Puppet can be difficult for new users who must learn Puppet DSL or Ruby, as advanced tasks usually require input from CLI.
+2. Puppet is written in Ruby language.
+3. Visualization and reporting.
+4. Puppet uses an agent/master architecture. Agents manage nodes and request relevant info from masters that control configuration info. The agent polls status reports and queries. regarding its associated server machine from the master Puppet server, which then communicates its response and required commands using the XML-RPC protocol over HTTPS.
+5. Must learn the Puppet DSL
+
+==> What is Ansible Tower
+
+1. Ansible Tower (formerly ‘AWX’) is a web-based solution that makes Ansible even more easy to use for IT teams of all kinds. It’s designed to be the hub for all of your automation tasks.
+
+2. Tower allows you to control access to who can access what, even allowing sharing of SSH credentials without someone being able to transfer those credentials. Inventory can be graphically managed or synced with a wide variety of cloud sources. It logs all of your jobs, integrates well with LDAP, and has an amazing browsable REST API. Command line tools are available for easy integration with Jenkins as well. Provisioning callbacks provide great support for autoscaling topologies.
+
+3. Red Hat Ansible Tower is a web console and REST API for operationalizing Ansible across your team, organization, and enterprise. It’s designed to be the hub for all of your automation tasks.
+
+4. Ansible Tower gives you role-based access control, including control over the use of securely stored credentials for SSH and other services. You can sync your Ansible Tower inventory with a wide variety of cloud sources, and powerful multi-playbook workflows allow you to model complex processes.
+
+5. It logs all of your jobs, integrates well with LDAP, SAML, and other authentication sources, and has an amazing browsable REST API. Command line tools are available for easy integration with Jenkins as well.
+
+
+==> Interview Questions[Ansible]
+
+[1]. https://www.guru99.com/ansible-interview-questions.html 
+[2]. https://www.interviewbit.com/ansible-interview-questions/
+[3]. https://www.edureka.co/blog/interview-questions/ansible-interview-questions/
+[4]. https://www.simplilearn.com/tutorials/ansible-tutorial/ansible-interview-questions
+[5]. https://www.javatpoint.com/ansible-interview-questions
+
+
+
+++++++++++++++++++++++++++
+JAVA VIRTUAL MACHINE(JVM):
+++++++++++++++++++++++++++
+
+- A Java virtual machine (JVM) is a virtual machine that enables a computer to run Java programs as well as programs written in other languages that are also compiled to Java bytecode
+- When you run the java program, JVM create a bytecode file with .class extension which is machine readable. You can move that file to any OS version and run the java code.
+
+This is how you run java program:
+#javac Additionprogram.java
+#java Additionprogram
+
+- JVM in Java is responsible for allocating memory space.
+- All the Objects, their related instance variables, and arrays are stored in the heap. This memory is common and shared across multiple threads.
+
+==> How to check JVM for Linux java process:
+#ps -ef | grep <servicename>
+e.g #ps -ef | grep cloudera
+
+# You will find "-Xms512 -Xmx1024" values in output.
+
+-Xms: It is used for setting the initial and minimum heap size. It is recommended to set the minimum heap size equivalent to the maximum heap size in order to minimize the garbage collection.
+
+-Xmx: It is used for setting the maximum heap size. The performance will decrease if the max heap value is set lower than the amount of live data. It will force frequent garbage collections in order to free up space.
+
+So, you can say that the JVM will start working with with -Xms amount of memory and further it will be able to use a maximum of -Xmx amount of memory. This means, JVM will startup with 512 MB of memory and will allow the process to use up to 1024 MB of memory.
+
+==> How to check port for a java process.
+
+1. Get the pid of the process.
+#ps -ef or #ps -ef | grep servicename
+e.g #ps -aux  |grep zookeeper
+
+2. Run netstat -plan | grep <PID>
+e.g netstat -plan | grep 6616048
+
+
+
+
+
+
